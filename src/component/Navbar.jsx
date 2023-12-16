@@ -1,12 +1,13 @@
 import React from 'react'
+import Logo from './images/CBC.png'
 
 function Navbar() {
 
   return (
     <>
-      <div className='flex justify-around mt-4 bg-slate-300 p-5 shadow-lg'>
-        <div className=''>
-            <img src='' alt='' className=''/>
+      <div className='flex justify-around mt-4 bg-slate-300 p-5 shadow-lg items-center p-px'>
+        <div className='p-0 ml-2 '>
+            <img src={Logo} alt='' className='rounded-full w-24 m-0 '/>
         </div>
         <div className='ml-auto pr-10 '>
             <ul className='flex gap-12 text-lg '>
