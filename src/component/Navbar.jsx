@@ -15,7 +15,7 @@ function Navbar() {
         </div>
         <div className='ml-auto pr-10 '>
             <ul className='flex gap-12 text-lg '>
-                <li className='border border-none duration-500 hover:bg-slate-700 hover:text-white rounded-full py-1 px-2 cursor-pointer'>Home</li>
+                <li className='border border-none duration-500 hover:bg-slate-700 hover:text-white rounded-full py-1 px-2 cursor-pointer'><a href='/'>Home</a></li>
                 <li className='border border-none duration-500 hover:bg-slate-700 hover:text-white rounded-full py-1 px-2 cursor-pointer'><a href='/center'>CBC Center</a></li>
                 <li className='border border-none duration-500 hover:bg-slate-700 hover:text-white rounded-full py-1 px-2 cursor-pointer'>About Us</li>
                 <li className='border border-none duration-500 hover:bg-slate-700 hover:text-white rounded-full py-1 px-2 cursor-pointer'>Contact Us</li>
