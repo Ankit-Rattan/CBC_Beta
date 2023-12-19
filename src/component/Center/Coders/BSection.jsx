@@ -14,6 +14,10 @@ const BSection = (props) => {
         <h1 className='font-semibold font-sans text-2xl'>{props.title}</h1>
       </div>
       <div>
+        <p className='font-semibold font-sans text-sm'>{props.name}</p>
+        <p className='font-semibold font-sans text-sm'>{props.date}</p>
+      </div>
+      <div>
         <p className=''>{props.primarytext}</p>
       </div>
       <br/>
