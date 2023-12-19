@@ -9,21 +9,39 @@ import Enter from './component/Enter'
 import Loader from './component/Loader'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Center from './component/Center/Center'
-import Home from './Home'
 
 
 function App() {
+
+  const [loading, setLoading] = useState(false);
+  
+  useEffect(()=>{
+    setLoading(true)
+    setTimeout(()=>{
+      setLoading(false)
+    }, 1000)
+  },[])
+
 
 
 
   return (
     <div>
-      <BrowserRouter>
-          <Routes>
-            <Route path='/' element={<Home/>}> </Route>
-            <Route path='/center' element={<Center/>}> </Route>
-          </Routes>
-        </BrowserRouter>    
+    {
+      loading ? 
+      <Loader/>
+      :
+      <div>
+
+      <Navbar/>
+
+      <Main/>
+      <About/>
+      <Enter/>
+      <Form/>
+      <Footer/>
+      </div>
+    }
 
     </div>
   )
