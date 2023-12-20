@@ -4,7 +4,7 @@ const BSection = (props) => {
   return (
     <>
 
-    <div className='justify-center items-center border rounded-lg p-4 m-2 max-w-xl shadow-2xl'>
+    <div className='justify-center items-center border rounded-lg p-4 m-2 max-w-xl shadow-2xl bg-slate-100'>
       <div className=''>
         <img src={props.imglink} alt='' className='rounded-lg max-w-lg m-0 '/>
       </div>

@@ -6,6 +6,7 @@ const Blog = () => {
     
   return (
     <div>
+    
         <CodeNav/>
         <div className='flex flex-wrap justify-around'>
 
