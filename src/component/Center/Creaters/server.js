@@ -9,7 +9,7 @@ const Post = require('./models/post'); // Import your Post model
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-mongoose.connect('YOUR_MONGO_DB_CONNECTION_STRING', {
+mongoose.connect('mongodb://localhost:27017', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
