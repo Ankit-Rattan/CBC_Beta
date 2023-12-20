@@ -1,12 +1,17 @@
 import React from 'react'
 import StrSection from './StrSection'
 import Top from './Top'
+import RegistrationForm from './RegistrationForm'
+import PostForm from './PostForm'
 
 const Creater = () => {
   return (
     <div className='bg-violet-400 h-full m-0 p-0'>
       <Top/>
-    <div className=' flex justify-around flex-wrap'>
+      <RegistrationForm/>
+      <br/>
+      <PostForm/>
+    {/* <div className=' flex justify-around flex-wrap'>
       <StrSection 
         imglink = "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*pIi-7Fn6QCadkYPrbA5nUA.jpeg"
         title="Christman Eve"
@@ -52,7 +57,7 @@ const Creater = () => {
         link = "https://medium.com/@rattan0209/a-day-before-christmas-1ccbd5ce578b"
 
       />
-    </div>
+    </div> */}
     </div>
   )
 }
