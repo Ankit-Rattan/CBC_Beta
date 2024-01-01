@@ -8,7 +8,6 @@ const Creater = () => {
   return (
     <div className='bg-violet-400 h-full m-0 p-0'>
       <Top/>
-      <RegistrationForm/>
       <br/>
       <PostForm/>
     {/* <div className=' flex justify-around flex-wrap'>
