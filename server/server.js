@@ -8,7 +8,7 @@ const app = express();
 const port = 3001;
 
 // Enable CORS
-app.use(cors());
+app.use(cors({ origin: 'http://localhost:5173' }));
 
 // Connect to MongoDB Atlas
 mongoose.connect('mongodb+srv://rattanankit2004:clicknik@cluster0.outnwh8.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });

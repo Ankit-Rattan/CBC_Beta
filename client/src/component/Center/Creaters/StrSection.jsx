@@ -23,8 +23,14 @@ const StrSection = (props) => {
       <br/>
       </div>
       <div className='text-right text-blue-700'>
-      <a href={props.link}>Read More</a>
-      </div>
+          {props.link ? (
+            <a href={props.link} target='_blank' rel='noopener noreferrer'>
+              Read More
+            </a>
+          ) : (
+            <span>No Link Available</span>
+          )}
+        </div>
     </div>
     </>
   )
