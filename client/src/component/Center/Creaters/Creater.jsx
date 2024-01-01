@@ -1,7 +1,7 @@
 import React from 'react'
 import StrSection from './StrSection'
 import Top from './Top'
-import RegistrationForm from './RegistrationForm'
+// import RegistrationForm from './RegistrationForm'
 import PostForm from './PostForm'
 
 const Creater = () => {
