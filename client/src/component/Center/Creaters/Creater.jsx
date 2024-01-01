@@ -3,6 +3,7 @@ import StrSection from './StrSection'
 import Top from './Top'
 // import RegistrationForm from './RegistrationForm'
 import PostForm from './PostForm'
+import PostList from './PostList'
 
 const Creater = () => {
   return (
@@ -10,6 +11,7 @@ const Creater = () => {
       <Top/>
       <br/>
       <PostForm/>
+      <PostList/>
     {/* <div className=' flex justify-around flex-wrap'>
       <StrSection 
         imglink = "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*pIi-7Fn6QCadkYPrbA5nUA.jpeg"

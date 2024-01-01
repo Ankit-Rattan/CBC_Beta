@@ -1,37 +1,53 @@
-// server.js
 const express = require('express');
 const mongoose = require('mongoose');
-const multer = require('multer');
-const cors = require('cors'); // Import cors middleware
+const cors = require('cors');
 
 const app = express();
 const port = 3001;
 
-// Enable CORS
-app.use(cors({ origin: 'http://localhost:5173' }));
+app.use(cors());
+app.use(express.json());
 
-// Connect to MongoDB Atlas
 mongoose.connect('mongodb+srv://rattanankit2004:clicknik@cluster0.outnwh8.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
 
-// Set up middleware for handling file uploads
-const upload = multer({ dest: 'uploads/' });
+const postSchema = new mongoose.Schema({
+  content: String,
+  name: String,
+  date: { type: Date, default: Date.now },
+  picture: String,
+  link: String,
+});
 
-// Define API routes
-app.post('/posts', upload.single('picture'), async (req, res) => {
+const Post = mongoose.model('Post', postSchema);
+
+app.post('/posts', async (req, res) => {
   try {
-    // Process and save the post data to MongoDB
-    const { content, name, date } = req.body;
-    const picture = req.file.path; // Multer adds a 'file' object to the request
+    const { content, name, link } = req.body;
 
-    // Save the data to MongoDB (replace Post model with your actual model)
-    // Example: const Post = mongoose.model('Post', postSchema);
-    // const newPost = new Post({ content, name, date, picture });
-    // await newPost.save();
+    const newPost = new Post({ content, name, link });
+    await newPost.save();
 
-    res.status(201).send('Post created successfully');
+    res.status(201).json({
+      imglink: newPost.picture,
+      title: newPost.content,
+      name: newPost.name,
+      date: newPost.date.toISOString().split('T')[0],
+      primarytext: newPost.content,
+      link: newPost.link,
+    });
   } catch (error) {
     console.error('Error creating post:', error);
-    res.status(500).send('Internal Server Error');
+    res.status(500).json({ error: 'Internal Server Error', details: error.message });
+  }
+});
+
+app.get('/posts', async (req, res) => {
+  try {
+    const posts = await Post.find().exec();
+    res.status(200).json(posts);
+  } catch (error) {
+    console.error('Error fetching posts:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
   }
 });
 
